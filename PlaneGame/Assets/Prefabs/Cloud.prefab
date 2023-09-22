@@ -120,4 +120,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 4
-  moveSpeed: 100
+  moveSpeed: 80
