@@ -6,42 +6,44 @@ public class CloudSpawn : MonoBehaviour
 {
     [SerializeField] private int poolCount = 9;
     [SerializeField] private bool autoExpand = false;
-    [SerializeField] private Cloud cloudPrefab;
+    [SerializeField] private Cloud cloudContainer;
     [SerializeField] private List<Transform> spawnPoints;
-    [SerializeField] private float timeBetweenCloudSpawn; 
-
+    [SerializeField] private float timeBetweenCloudSpawn;
+    [SerializeField] private float delayBeforeFirstCloudSpawn;
 
 
     private PoolCloudsMono<Cloud> pool;
 
     private void Start()
     {
-        this.pool = new PoolCloudsMono<Cloud>(this.cloudPrefab, this.poolCount, this.transform);
+        this.pool = new PoolCloudsMono<Cloud>(this.cloudContainer, this.poolCount, this.transform);
         this.pool.autoExpand = this.autoExpand;
-        StartCoroutine(CloudSpawner());
+       StartCoroutine(DelayBeforeFisrtCloud());
     }
 
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            this.CreateCloud();
-        }
-
-        
-    }
-
+    
     private void CreateCloud()
     {
-        
+
         int randomIndex = (Random.Range(0, spawnPoints.Count));
-        Transform randomTransform = spawnPoints[randomIndex];
+        Transform randomSpawnPoint = spawnPoints[randomIndex];
+
+
+        var cloud = this.pool.GetFreeElement();
 
         
-        var cloud = this.pool.GetFreeElement();
-        cloud.transform.position = randomTransform.position;
+
+        cloud.transform.position = randomSpawnPoint.position;
+
+    }
+
+    private IEnumerator DelayBeforeFisrtCloud()
+    {
+
         
+        yield return new WaitForSeconds(delayBeforeFirstCloudSpawn);
+        StartCoroutine(CloudSpawner());
     }
 
     private IEnumerator CloudSpawner()
@@ -50,7 +52,7 @@ public class CloudSpawn : MonoBehaviour
         CreateCloud();
         yield return new WaitForSeconds(timeBetweenCloudSpawn);
 
-        
+
         StartCoroutine(CloudSpawner());
     }
 }

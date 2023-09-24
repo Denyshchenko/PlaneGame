@@ -7,7 +7,7 @@ public class PlaneController : MonoBehaviour
     [SerializeField] private float gravityForce = 5;
 
     [SerializeField] private float rotationSpeed;
-    [SerializeField] private float maxRotationAngle = 45.0f;
+
     
     private Rigidbody rigidBody;
     private float rotationSpeedToDefaultPosition = 7; 

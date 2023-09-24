@@ -1,23 +1,28 @@
 using System.Collections;
 using UnityEngine;
+using System.Collections.Generic;
 
 
 public class Cloud : MonoBehaviour
 {
     [SerializeField] private float lifeTime = 3f;
+    public float moveSpeed = 2f;
 
-    public float moveSpeed = 2f;    
-
+   
     
+
+
     private void Update()
     {
-       
         transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
     }
 
+
     private void OnEnable()
     {
-        this.StartCoroutine(LifeTime());  
+       
+        this.StartCoroutine(LifeTime());
+        
     }
 
     private void OnDisable()
@@ -29,13 +34,19 @@ public class Cloud : MonoBehaviour
 
     private IEnumerator LifeTime()
     {
+        
         yield return new WaitForSeconds(lifeTime);
         Deactivate();
     }
 
+
     private void Deactivate()
     {
+        //  gameObject.transform.cl(randomIndex).gameObject.SetActive(false);
+        
+        
         this.gameObject.SetActive(false);
     }
 }
 
+    
