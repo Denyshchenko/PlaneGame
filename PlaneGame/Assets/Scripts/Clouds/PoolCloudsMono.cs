@@ -4,25 +4,25 @@ using UnityEngine;
 public class PoolCloudsMono<T> where T : MonoBehaviour
 {
 
-    public T prefab { get; }
-    public bool autoExpand { set; get; }
-    public Transform container { get; }
+    public T Prefab { get; }
+    public bool AutoExpand { set; get; }
+    public Transform Container { get; }
 
 
-    public List<T> pool;
+    public List<T> Pool;
 
 
     public PoolCloudsMono(T prefab, int count, Transform container)
     {
-        this.prefab = prefab;
-        this.container = container;
+        this.Prefab = prefab;
+        this.Container = container;
 
         this.CreatePool(count);
     }
 
     private void CreatePool(int count)
     {
-        this.pool = new List<T>();
+        this.Pool = new List<T>();
 
         for (int i = 0; i < count; i++)
             this.CreateObject();
@@ -32,16 +32,16 @@ public class PoolCloudsMono<T> where T : MonoBehaviour
 
     private T CreateObject(bool isActiveByDefault = false)
     {
-        var createdObject = Object.Instantiate(this.prefab, this.container);
+        var createdObject = Object.Instantiate(this.Prefab, this.Container);
         createdObject.gameObject.SetActive(isActiveByDefault);
-        this.pool.Add(createdObject);
+        this.Pool.Add(createdObject);
 
         return createdObject;
     }
 
     public bool HasFreeElement(out T element)
     {
-        foreach (var cloudMono in pool)
+        foreach (var cloudMono in Pool)
         {
             if (!cloudMono.gameObject.activeInHierarchy)
             {
@@ -63,7 +63,7 @@ public class PoolCloudsMono<T> where T : MonoBehaviour
 
 
 
-        if (this.autoExpand)
+        if (this.AutoExpand)
             return this.CreateObject(true);
 
 

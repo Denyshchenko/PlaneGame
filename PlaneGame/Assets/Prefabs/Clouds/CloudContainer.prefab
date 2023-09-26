@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3674819352771746764}
   - component: {fileID: 6705414399464515555}
   - component: {fileID: 7826642695065339105}
+  - component: {fileID: 6352104501129443122}
   m_Layer: 0
   m_Name: Cloud_Strato
   m_TagString: Untagged
@@ -99,13 +100,27 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 85c7b36c43c3b5d4bb144cc09fc55f71, type: 3}
+--- !u!114 &6352104501129443122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85578983477066829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da64839a829ac445e9071647dae9bdac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 2100000, guid: 6b9f3ceb7b8a4494b81c12bb67f6a014, type: 2}
+  awareMaterial: {fileID: 2100000, guid: 2d37bebf255b44c94bf3b5e2140318b9, type: 2}
 --- !u!1 &2387990566598235376
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3a37a1f54424b85adfabb98c511f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 4
-  moveSpeed: 80
+  MoveSpeed: 100
+  _lifeTime: 5
 --- !u!114 &7382408200233389595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +201,7 @@ GameObject:
   - component: {fileID: 6498259300073826103}
   - component: {fileID: 464262816788276550}
   - component: {fileID: 2870936183269902930}
+  - component: {fileID: 1719910198760955315}
   m_Layer: 0
   m_Name: Cloud_Cumulus (2)
   m_TagString: Untagged
@@ -273,13 +289,27 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6e253dc59c001e44ab9d35ee01215549, type: 3}
+--- !u!114 &1719910198760955315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2675692850687335432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da64839a829ac445e9071647dae9bdac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 2100000, guid: 6b9f3ceb7b8a4494b81c12bb67f6a014, type: 2}
+  awareMaterial: {fileID: 2100000, guid: 2d37bebf255b44c94bf3b5e2140318b9, type: 2}
 --- !u!1 &5472883130015682565
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +322,7 @@ GameObject:
   - component: {fileID: 4527113548586472800}
   - component: {fileID: 3913773743655751744}
   - component: {fileID: 7067844724550796974}
+  - component: {fileID: 2079485656882766228}
   m_Layer: 0
   m_Name: Cloud
   m_TagString: Untagged
@@ -379,13 +410,27 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 74b8105a60af1c84394ac279e7081b79, type: 3}
+--- !u!114 &2079485656882766228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5472883130015682565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da64839a829ac445e9071647dae9bdac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 2100000, guid: 6b9f3ceb7b8a4494b81c12bb67f6a014, type: 2}
+  awareMaterial: {fileID: 2100000, guid: 2d37bebf255b44c94bf3b5e2140318b9, type: 2}
 --- !u!1 &9137383761783732553
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +443,7 @@ GameObject:
   - component: {fileID: 652137031142511976}
   - component: {fileID: 6666080967147302125}
   - component: {fileID: 5408826106571032919}
+  - component: {fileID: 7496268321507379877}
   m_Layer: 0
   m_Name: Cloud_Strato (1)
   m_TagString: Untagged
@@ -485,10 +531,24 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 85c7b36c43c3b5d4bb144cc09fc55f71, type: 3}
+--- !u!114 &7496268321507379877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9137383761783732553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da64839a829ac445e9071647dae9bdac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 2100000, guid: 6b9f3ceb7b8a4494b81c12bb67f6a014, type: 2}
+  awareMaterial: {fileID: 2100000, guid: 2d37bebf255b44c94bf3b5e2140318b9, type: 2}
